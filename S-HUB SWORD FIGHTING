@@ -1,0 +1,226 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Sword fighting - s-hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+OrionLib:MakeNotification({
+	Name = "Credit to showcaser1",
+	Content = "thanks for using s-hub",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+--tabs
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = MainTab:AddSection({
+	Name = "Main"
+})
+
+MainTab:AddButton({
+	Name = "inf jump",
+	Callback = function()
+	local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+      		print("button pressed")
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "esp!",
+	Callback = function()
+	local esp_settings = { 
+    textsize = 5,
+    colour = 255,255,666
+}
+ 
+local gui = Instance.new("BillboardGui")
+local esp = Instance.new("TextLabel",gui)
+ 
+ 
+ 
+gui.Name = " esp";
+gui.ResetOnSpawn = false
+gui.AlwaysOnTop = true;
+gui.LightInfluence = 0;
+gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+esp.Text = ""
+esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+esp.BorderSizePixel = 4;
+esp.BorderColor3 = Color3.new(esp_settings.colour)
+esp.BorderSizePixel = 0
+esp.Font = "GothamSemibold"
+esp.TextSize = esp_settings.textsize
+esp.TextColor5 = Color3.fromRGB(esp_settings.colour) -- text colour
+ 
+game:GetService("RunService").RenderStepped:Connect(function()
+    for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then
+            esp.Text = "{"..v.Name.."}"
+            gui:Clone().Parent = v.Character.Head
+    end
+end
+end)
+      		print("button pressed")
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "reach!",
+	Callback = function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/Jsghb8bt'))()
+      		print("button pressed")
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "auto exeuse!",
+	Callback = function()
+	getgenv().dmsgs = {
+  deathmessages = {"i was lagging", "that wasnt fair"}
+}
+--[[
+Auto-Excuse by ShowCaser1
+]]--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/goldmoments/auto-excuse/main/Script"))("Auto-Excuse Script | ShowCaser1") 
+      		print("button pressed")
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Chat bypass",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/ChatBypasser-AZY/main/Chat%20Bypass%20-%20ChatSplitter(Source).lua"))()
+      		print("button pressed")
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "be a bot/press x to turn on and off",
+	Callback = function()
+	  -- press x to turn on
+loadstring(game:HttpGet('https://raw.githubusercontent.com/yeerma/1/main/bot'))()
+--credits: https://v3rmillion.net/showthread.php?tid=1197208
+      		print("button pressed")
+  	end    
+})
+
+local PlayerTab = Window:MakeTab({
+	Name = "localPlayer",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = PlayerTab:AddSection({
+	Name = "Player"
+})
+
+PlayerTab:AddSlider({
+	Name = "Walkspeed(for pc)",
+	Min = 16,
+	Max = 500,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Walkspeed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "JumpPower(for pc)",
+	Min = 16,
+	Max = 500,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jumppower",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+PlayerTab:AddButton({
+	Name = "speed gui [for mobile] - (credit to mrscripter",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MrScripterrFr/Speed-Changer/main/Speed%20Changer"))();
+      		print("button pressed")
+  	end  
+})
+
+PlayerTab:AddButton({
+	Name = "fly gui (modded)!",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/GDvMG4Ve"))()
+      		print("button pressed")
+  	end    
+})
+
+local AdminTab = Window:MakeTab({
+	Name = "Admin",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = AdminTab:AddSection({
+	Name = "Admin"
+})
+
+AdminTab:AddButton({
+	Name = "inf yield",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      		print("button pressed")
+  	end  
+})
+
+AdminTab:AddButton({
+	Name = "nameless admin",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+      		print("button pressed")
+  	end  
+})
+
+AdminTab:AddButton({
+	Name = "leg admin",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
+      		print("button pressed")
+  	end  
+})
+
+local CreditsTab = Window:MakeTab({
+	Name = "credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = CreditsTab:AddSection({
+	Name = "credits"
+})
+
+CreditsTab:AddLabel("credit to ShowCaser1")
+CreditsTab:AddButton({
+	Name = "copy youtube link",
+	Callback = function()
+	setclipboard("https://youtube.com/showcaser1")
+      		print("copyed youtube link")
+  	end
+})
+
+CreditsTab:AddButton({
+	Name = "copy name youtube",
+	Callback = function()
+	setclipboard("showcaser1")
+      		print("copyed youtube name ")
+  	end
+})
